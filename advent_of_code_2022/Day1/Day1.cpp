@@ -1,0 +1,48 @@
+#include "Day1.h"
+
+Day1::Day1() {
+	SolvePartOne();
+	SolvePartTwo();
+}
+
+void Day1::SolvePartOne() {
+	string line;
+	int elf = 0;
+	int cal = 0;
+	ifstream file("C:/Users/User/Documents/GitHub/Advent_of_Code_2022/advent_of_code_2022/Day1/input.txt");
+	if (file.is_open()) {
+		while (getline(file, line)) {
+			if (line.empty()) {
+				elf++;
+				m_elfCaloriesMap.insert(pair<int, int>(cal, elf));
+				cal = 0;
+			}
+			else {
+				cal += stoi(line);
+			}
+		}
+		file.close();
+	}
+	else {
+		cout << "Unable to open file";
+	}
+
+	int mostCalories = 0;
+	map<int, int>::iterator it;
+	for (it = m_elfCaloriesMap.begin(); it != m_elfCaloriesMap.end(); it++) {
+		if (it->first > mostCalories) {
+			mostCalories = it->first;
+		}
+	}
+	m_partOneAnswer = mostCalories;
+}
+
+void Day1::SolvePartTwo() {
+	int topThreeResults = 0;
+	auto it = m_elfCaloriesMap.rbegin();
+	for (int i = 0; i < 3; i++) {
+		topThreeResults += it->first;
+		it++;
+	}
+	m_partTwoAnswer = topThreeResults;
+}

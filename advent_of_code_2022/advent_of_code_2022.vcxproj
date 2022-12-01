@@ -139,7 +139,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="advent_of_code_2022.cpp" />
+    <ClCompile Include="Base\Day.cpp" />
+    <ClCompile Include="Base\main.cpp" />
+    <ClCompile Include="Day1\Day1.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Base\Day.h" />
+    <ClInclude Include="Day1\Day1.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
