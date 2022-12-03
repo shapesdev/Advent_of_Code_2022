@@ -1,7 +1,7 @@
 #include "Day2.h"
 
 Day2::Day2() {
-	day = 2;
+	m_Day = 2;
 	ReadInput();
 	SolvePartOne();
 	SolvePartTwo();
@@ -39,7 +39,7 @@ void Day2::SolvePartOne() {
 			}
 		}
 	}
-	m_partOneAnswer = total;
+	m_PartOneAnswer = total;
 }
 
 void Day2::SolvePartTwo() {
@@ -56,7 +56,7 @@ void Day2::SolvePartTwo() {
 			CheckStrategy(losses, it, total, 0);
 		}
 	}
-	m_partTwoAnswer = total;
+	m_PartTwoAnswer = total;
 }
 
 void Day2::CheckStrategy(string arr[], string input, int &total, int conditionValue) {

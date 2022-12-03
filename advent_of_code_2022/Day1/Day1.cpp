@@ -1,7 +1,7 @@
 #include "Day1.h"
 
 Day1::Day1() {
-	day = 1;
+	m_Day = 1;
 	ReadInput();
 	SolvePartOne();
 	SolvePartTwo();
@@ -38,7 +38,7 @@ void Day1::SolvePartOne() {
 			mostCalories = it->first;
 		}
 	}
-	m_partOneAnswer = mostCalories;
+	m_PartOneAnswer = mostCalories;
 }
 
 void Day1::SolvePartTwo() {
@@ -48,5 +48,5 @@ void Day1::SolvePartTwo() {
 		topThreeResults += it->first;
 		it++;
 	}
-	m_partTwoAnswer = topThreeResults;
+	m_PartTwoAnswer = topThreeResults;
 }
