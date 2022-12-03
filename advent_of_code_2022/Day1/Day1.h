@@ -7,6 +7,7 @@ class Day1 : public Day
 		Day1();
 
 	private:
+		void ReadInput();
 		void SolvePartOne();
 		void SolvePartTwo();
 		multimap<int, int> m_elfCaloriesMap;

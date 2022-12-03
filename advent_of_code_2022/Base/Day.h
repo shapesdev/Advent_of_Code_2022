@@ -15,8 +15,10 @@ class Day
 	protected:
 		virtual void SolvePartOne() = 0;
 		virtual void SolvePartTwo() = 0;
+		virtual void ReadInput() = 0;
 
 		int m_partOneAnswer;
 		int m_partTwoAnswer;
+		int day = 0;
 };
 

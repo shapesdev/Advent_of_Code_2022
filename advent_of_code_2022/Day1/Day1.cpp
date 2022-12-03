@@ -1,11 +1,13 @@
 #include "Day1.h"
 
 Day1::Day1() {
+	day = 1;
+	ReadInput();
 	SolvePartOne();
 	SolvePartTwo();
 }
 
-void Day1::SolvePartOne() {
+void Day1::ReadInput() {
 	string line;
 	int elf = 0;
 	int cal = 0;
@@ -26,7 +28,9 @@ void Day1::SolvePartOne() {
 	else {
 		cout << "Unable to open file";
 	}
+}
 
+void Day1::SolvePartOne() {
 	int mostCalories = 0;
 	map<int, int>::iterator it;
 	for (it = m_elfCaloriesMap.begin(); it != m_elfCaloriesMap.end(); it++) {
