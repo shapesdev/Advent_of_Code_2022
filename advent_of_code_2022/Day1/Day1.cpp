@@ -11,7 +11,7 @@ void Day1::ReadInput() {
 	string line;
 	int elf = 0;
 	int cal = 0;
-	ifstream file("C:/Users/User/Documents/GitHub/Advent_of_Code_2022/advent_of_code_2022/Day1/input.txt");
+	ifstream file("Day1/input.txt");
 	if (file.is_open()) {
 		while (getline(file, line)) {
 			if (line.empty()) {

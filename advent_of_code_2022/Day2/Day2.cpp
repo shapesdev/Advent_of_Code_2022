@@ -43,5 +43,27 @@ void Day2::SolvePartOne() {
 }
 
 void Day2::SolvePartTwo() {
+	int total = 0;
+	for (auto& it : m_Inputs) {
+		char myShape = it[2];
+		if (myShape == 'Z') {
+			CheckStrategy(wins, it, total, 6);
+		}
+		else if (myShape == 'Y') {
+			CheckStrategy(draws, it, total, 3);
+		}
+		else {
+			CheckStrategy(losses, it, total, 0);
+		}
+	}
+	m_partTwoAnswer = total;
+}
 
+void Day2::CheckStrategy(string arr[], string input, int &total, int conditionValue) {
+	for (int i = 0; i < 3; i++) {
+		if (arr[i][0] == input[0]) {
+			int shape = (int)arr[i][2] % 87;
+			total += shape + conditionValue;
+		}
+	}
 }
